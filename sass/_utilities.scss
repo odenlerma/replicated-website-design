@@ -1,0 +1,152 @@
+@use 'sass:math';
+
+$utils: (
+    "padding": (
+        "prefix": "p",
+        "values": (
+            "0": 0,
+            "1": $base-spacing-1,
+            "2": $base-spacing-2,
+            "3": $base-spacing-3,
+            "4": $base-spacing-4,
+            "5": $base-spacing-5,
+            "6": $base-spacing-6,
+        )
+    ),
+    "padding-left": (
+        "prefix": "ps",
+        "values": (
+            "0": 0,
+            "1": $base-spacing-1,
+            "2": $base-spacing-2,
+            "3": $base-spacing-3,
+            "4": $base-spacing-4,
+            "5": $base-spacing-5,
+            "6": $base-spacing-6,
+        )
+    ),
+    "padding-right": (
+        "prefix": "pe",
+        "values": (
+            "0": 0,
+            "1": $base-spacing-1,
+            "2": $base-spacing-2,
+            "3": $base-spacing-3,
+            "4": $base-spacing-4,
+            "5": $base-spacing-5,
+            "6": $base-spacing-6,
+        )
+    ),
+    "padding-bottom": (
+        "prefix": "pb",
+        "values": (
+            "0": 0,
+            "1": $base-spacing-1,
+            "2": $base-spacing-2,
+            "3": $base-spacing-3,
+            "4": $base-spacing-4,
+            "5": $base-spacing-5,
+            "6": $base-spacing-6,
+        )
+    ),
+    "padding-top": (
+        "prefix": "pt",
+        "values": (
+            "0": 0,
+            "1": $base-spacing-1,
+            "2": $base-spacing-2,
+            "3": $base-spacing-3,
+            "4": $base-spacing-4,
+            "5": $base-spacing-5,
+            "6": $base-spacing-6,
+        )
+    ),
+    "margin": (
+        "prefix": "m",
+        "values": (
+            "0": 0,
+            "1": $base-spacing-1,
+            "2": $base-spacing-2,
+            "3": $base-spacing-3,
+            "4": $base-spacing-4,
+            "5": $base-spacing-5,
+            "6": $base-spacing-6,
+        )
+    ),
+    "margin-left": (
+        "prefix": "ms",
+        "values": (
+            "0": 0,
+            "1": $base-spacing-1,
+            "2": $base-spacing-2,
+            "3": $base-spacing-3,
+            "4": $base-spacing-4,
+            "5": $base-spacing-5,
+            "6": $base-spacing-6,
+        )
+    ),
+    "margin-right": (
+        "prefix": "me",
+        "values": (
+            "0": 0,
+            "1": $base-spacing-1,
+            "2": $base-spacing-2,
+            "3": $base-spacing-3,
+            "4": $base-spacing-4,
+            "5": $base-spacing-5,
+            "6": $base-spacing-6,
+        )
+    ),
+    "margin-bottom": (
+        "prefix": "mb",
+        "values": (
+            "0": 0,
+            "1": $base-spacing-1,
+            "2": $base-spacing-2,
+            "3": $base-spacing-3,
+            "4": $base-spacing-4,
+            "5": $base-spacing-5,
+            "6": $base-spacing-6,
+        )
+    ),
+    "margin-top": (
+        "prefix": "mt",
+        "values": (
+            "0": 0,
+            "1": $base-spacing-1,
+            "2": $base-spacing-2,
+            "3": $base-spacing-3,
+            "4": $base-spacing-4,
+            "5": $base-spacing-5,
+            "6": $base-spacing-6,
+        )
+    ),
+    "display": (
+        "prefix": "d",
+        "values": (
+            "none": "none",
+            "block": "block",
+            "flex": "flex",
+            "inline": "inline",
+            "inline-block": "inline-block",
+        )
+    ),
+);
+
+
+@each $property, $map in $utils {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+        @if($k == "default"){
+            .#{$prefix} {
+                #{$property}: $v;
+            }
+        } @else {
+            .#{$prefix}--#{$k} {
+                #{$property}: $v;
+            }
+        }
+    }
+}

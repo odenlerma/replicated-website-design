@@ -1,0 +1,11 @@
+@each $key, $val in $colors {
+    .button--#{$key} {
+        text-decoration: none;
+        cursor: pointer;
+        display: inline-block;
+        border-radius: $border-radius;
+        padding: $base-spacing-4 $base-spacing-6;
+        border: 0;
+        background-color: $val;
+    }
+}

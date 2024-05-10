@@ -1,0 +1,13 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 10" width="16" height="10">
+	<title>intake form</title>
+	<defs>
+		<image  width="16" height="10" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAKCAMAAACKYC6uAAAAAXNSR0IB2cksfwAAAFRQTFRFTlVcTlVcTlVcTlVcTlVcTlVcTlVcTlVcTlVcTlVcTlVcTlVcTlVcTlVcTlVcTlVcTlVcTlVcTlVcTlVcTlVcTlVcTlVcTlVcTlVcTlVcTlVcTlVcAEwepwAAABx0Uk5TgvuzCgD/vgjIsgYc3KwDHuSlJOWXLesv8Tc/56g064IAAABuSURBVHicPYzdCoJAGETP4FLShiFS7/98iUSSUaFM327QXMzPuRihED85JKVAW92Nzao2RtIn9s5rQGW9odWTg1+wt1LWAseN5gHZS1x0muHEHTrPBKDXrZ72jiyAQVNxF6+Ac/RBI3/ARfha2xdCoiU3g462MgAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<g id="intake form">
+		<g id="category">
+			<use id="down arrow" style="opacity: .5" href="#img1" x="0" y="0"/>
+		</g>
+	</g>
+</svg>
