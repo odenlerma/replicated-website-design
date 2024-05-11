@@ -1,7 +1,14 @@
 # Technical Onboarding Exam - Replicated Webpage
 This is for technical exam purposes and will be set to private once exam is done to avoid replication. 
 
-# Getting Started
+# View website of project
+Website Link: 
+[https://odenlerma.github.io/replicated-website-design/] (https://odenlerma.github.io/replicated-website-design/)
+
+# ![WEBPAGE](assets/png/screenshot.PNG)
+
+
+# Instructions
 
 
 ## Step 1: First clone this repository
