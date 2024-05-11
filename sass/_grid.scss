@@ -5,7 +5,8 @@ $grid-gutter: (
     "0" : 0,
     "1" : 1rem,
     "2" : 1.5rem,
-    "3" : 2rem
+    "3" : 2rem,
+    "4" : 4rem,
 );
 $layout: flex-start, flex-end, center, space-between, space-around;
 
@@ -18,16 +19,31 @@ $layout: flex-start, flex-end, center, space-between, space-around;
     box-sizing: border-box;
 }
 
-.container-fluid {
+.container--fluid {
     width: 100%;
     margin: 0 auto;
     padding: 0 0;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .row {
     display: flex;
     flex-flow: row wrap;
+}
+
+.flex--1 {
+    flex: 1;
+}
+
+.flex--row {
+    flex-direction: row;
+}
+
+.flex--column {
+    flex-direction: column;
 }
 
 @each $val in $layout {

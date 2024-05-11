@@ -7,16 +7,16 @@
   <title>LegalMatch-Frontend Website Exam</title>
 </head>
 <body>
-  <div class="container-fluid">
-    <header class="header container">
+  <div class="container--fluid">
+    <header class="container__header container">
       <div class="row justify--center align--center pt--3 pb--3">
-        <div class="col__md--9 col__sm--12 d--flex justify--center align--center">
-            <div class="row d--flex justify--center align--center">
+        <div class="col__md--9 col__sm--12">
+            <div class="row justify--center align--center">
                 <div class="col__md--4 col__sm--12">
-                  <img src="./assets/svg/logo.svg" alt="Legal Match: Find the right lawyer now" class="logo-img"/>
+                  <img src="./assets/svg/logo.svg" alt="Legal Match: Find the right lawyer now" class="img__logo"/>
                 </div>
-                <div class="col__md--8 col__sm--12 pt--2 ps--2">
-                  <span class="text--primary tagline">FIND THE RIGHT LAWYER NOW</span>
+                <div class="tagline col__md--8 col__sm--12 pt--2 ps--2">
+                  <span class="text--primary">FIND THE RIGHT LAWYER NOW</span>
                 </div>
             </div>
         </div>
@@ -30,6 +30,104 @@
       </div>
     </header>
     
+    <div class="container__main">
+      <div class="container">
+        <h1 class="text--white">Find a Lawyer for your Legal Issue</h1>
+        <h2 class="text--white font--bold">Fast, Free and Confidential</h2>
+        <div class="row justify--center align--center">
+          <div class="col__md--5 col__sm--12">
+            <p class="text--white font--bold mb--2">Enter Zip Code or City:</p>
+            <div class="selectize mb--6">
+              <div class="input">
+                <span class="input__label text--white font--bold me--3">1</span>
+                <input type="text" class="input__main" id="textInputSelect" placeholder="Does not have to be where you live">
+              </div>
+              <ul id="optionsList" class="selectize__options d--none"></ul>
+            </div>
+            <p class="text--white font--bold mb--2">Choose a category:</p>
+            <div class="category mb--6">
+              <div class="input" id="categoryDiv">
+                <span class="input__label text--white font--bold me--3">2</span>
+                <p class="input__main text--gray" id="categoryInput"> Click to choose a legal category</p>
+                <img class="pe--3 ps--3" src="assets/svg/chevron-down.svg" />
+              </div>
+              <ul id="categoryList" class="category__options d--none">
+              </ul>
+            </div>
+            <div class="row justify--center align--center mb--6">
+              <p class="text--white">Can&apos;t find your category? <a class="clickhere">Click here.</a></p>
+            </div>
+          </div>
+          <div class="col__md--2 col__sm--12"></div>
+          <div class="col__md--5 col__sm--12">
+            <p class="clients__title text--white mb--3">Clients review LegalMatch lawyers</p>
+            <div class="row justify--center">
+              <div class="col__md--3 col__sm--12">
+                  <div class="d--flex justify--center align--center flex--column">
+                    <img src="assets/svg/review-mitchell.svg"/>
+                    <p class="text--white font--bold">Mitchell M.</p>
+                    <p class="text--white">Cherry Hill, NJ</p>
+                  </div>
+              </div>
+              <div class="col__md--9 col__sm--12 ps--3">
+                <div class="row mb--2 align--center">
+                  <p class="text--white mb--0 font-size--sm font--bold me--3">Family Law</p>
+                  <img src="assets/svg/star.svg" class="img__star"/>
+                </div>
+                <p class="text--white font-size--sm text--italic mb--2">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ...</p>
+                <div class="row justify--flex-end">
+                    <p class="text--yellow font-size--sm font--bold me--2">Read Review</p>
+                    <img src="assets/svg/read-more.svg" />
+                </div>
+            </div>
+            </div>
+            <hr>
+            <div class="row justify--center">
+              <div class="col__md--3 col__sm--12">
+                  <div class="d--flex justify--center align--center flex--column">
+                    <img src="assets/svg/review-joel.svg"/>
+                    <p class="text--white font--bold">Joel C.</p>
+                    <p class="text--white">Little Rock, AK</p>
+                  </div>
+              </div>
+              <div class="col__md--9 col__sm--12 ps--3">
+                <div class="row mb--2 align--center">
+                  <p class="text--white mb--0 font-size--sm font--bold me--3">Job and Employment Law</p>
+                  <img src="assets/svg/star.svg" class="img__star"/>
+                </div>
+                <p class="text--white font-size--sm text--italic mb--2">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ...</p>
+                <div class="row justify--flex-end">
+                    <p class="text--yellow font-size--sm font--bold me--2">Read Review</p>
+                    <img src="assets/svg/read-more.svg" />
+                </div>
+            </div>
+            </div>
+            <hr>
+            <div class="row justify--center">
+              <div class="col__md--3 col__sm--12">
+                  <div class="d--flex justify--center align--center flex--column">
+                    <img src="assets/svg/review-brigida.svg"/>
+                    <p class="text--white font--bold">Brigida R.</p>
+                    <p class="text--white">Dallas, TX</p>
+                  </div>
+              </div>
+              <div class="col__md--9 col__sm--12 ps--3">
+                  <div class="row mb--2 align--center">
+                    <p class="text--white mb--0 font-size--sm font--bold me--3">Family Law</p>
+                    <img src="assets/svg/star.svg" class="img__star"/>
+                  </div>
+                  <p class="text--white font-size--sm text--italic mb--2">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ...</p>
+                  <div class="row justify--flex-end">
+                      <p class="text--yellow font-size--sm font--bold me--2">Read Review</p>
+                      <img src="assets/svg/read-more.svg" />
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>

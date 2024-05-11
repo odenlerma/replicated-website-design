@@ -1,0 +1,40 @@
+$glow-size: 16px;
+
+.input {
+    border-radius: $border-radius;
+    padding: $base-spacing-3 $base-spacing-3;
+    outline: none;
+    transition: border-color 0.3s ease;
+    border-width: 5px;
+    background-color: map-get($colors, "white");
+    display: flex;
+    flex-direction: row;
+
+    .input__label {
+        background-color: map-get($colors, "secondary");
+        width: 2em;
+        height: 2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+
+    input, &__main {
+        border: 0;
+        flex: 1;
+        font-family: 'Montserrat';
+        outline: none;
+        align-self: center;
+        font-size: 1rem;
+
+        &::placeholder {
+            color: map-get($colors, "gray");
+        }
+    } 
+
+    &.focused {
+        border-color: map-get($colors, "white");
+        box-shadow: 0 0 $glow-size map-get($colors, "white"); // Add shadow to create glow effect
+    }
+}

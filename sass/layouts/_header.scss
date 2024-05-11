@@ -1,10 +1,11 @@
-.header {
-    .logo-img {
+.container__header {
+    .img__logo {
         height: auto;
         width: 400px;
     }
 
     .tagline {
         font-weight: 800;
+        padding-bottom: 0.4rem;
     }
 }
