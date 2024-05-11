@@ -1,4 +1,4 @@
-// Modal creation
+// ============== modal creation ========== //
 function openModal(maxWidth, content) {
   // for backdrop
   const backdrop = document.createElement('div');
@@ -49,7 +49,7 @@ input.addEventListener('blur', () => {
 
 
 
-// for select zipcode input
+// ============== input zipcode ========== //
 const inputid = document.getElementById('textInputSelect');
 const optionsList = document.getElementById('optionsList');
 
@@ -98,7 +98,7 @@ function hideOptions() {
     optionsList.classList.add('d--none');
 }
 
-// for select category input
+// ============== on select category ========== //
 const categoryid = document.getElementById('categoryDiv');
 const categoryList = document.getElementById('categoryList');
 let bool = true
@@ -135,6 +135,7 @@ function hideCategory() {
     categoryList.classList.add('d--none');
 }
 
+// ============== screen3 - on select category ========== //
 function openScreen3Modal(val) {
   fetch('./modal/modal-screen3.html')
   .then(response => response.text())
@@ -157,7 +158,7 @@ categoryList.addEventListener('click', function(event) {
     }
 });
 
-
+// ============== screen4 - read review ========== //
 const openScreen4Modals = document.querySelectorAll('#openScreen4Modal');
 openScreen4Modals.forEach(openScreen4Modal => {
   openScreen4Modal.addEventListener('click', function(event) {
@@ -165,7 +166,7 @@ openScreen4Modals.forEach(openScreen4Modal => {
     .then(response => response.text())
     .then(htmlContent => {
       openModal("600px", htmlContent);
-      
+
       //evaluation list
       const evalList = document.getElementById('evaluationList');
       evalList.innerHTML = '';
@@ -241,8 +242,67 @@ openScreen4Modals.forEach(openScreen4Modal => {
   });
 });
 
-
+// ============== screen5 - more categories ========== //
 const openScreen5Modal = document.getElementById('openScreen5Modal');
 openScreen5Modal.addEventListener('click', function() {
+  fetch('./modal/modal-screen5.html')
+  .then(response => response.text())
+  .then(htmlContent => {
+    openModal("720px", htmlContent);
+    let otherList = document.getElementById('otherCategoriesList');
+    let otherLeftDiv = document.createElement('div');
+    otherLeftDiv.classList.add('col__md--6', 'col__sm--12');
+    let otherRightDiv = document.createElement('div');
+    otherRightDiv.classList.add('col__md--6', 'col__sm--12');
 
+    let other = [
+      'Abuse (Child, Domestic, Sexual)',
+      'Agencies & Administration',
+      'Automobile ( DUI, Crimes, Speeding )',
+      'Automobiles ( Accidents, Insurance )',
+      'Banking ( Business, Consumer )',
+      'Bars & Restaurants',
+      'Business Formation & Dissolution',
+      'Children (Adoption, Custody, Support)',
+      'Class Actions (Bad Drugs, Products)',
+      'Commercial Law and Contracts',
+      'Commercial Real Estate',
+      'Constitutional Law',
+      'Construction (Disputes, Liens)',
+      'Categories Item Here',
+      'Loremipsum Dolorsitamet,',
+      'Lonsectetur Scingelit  (Baseererkj, Mereit)',
+      'Miam Euvelit',
+      'Mempor Auctor (Estiarma, Toeruslej)',
+      'Nisultricies Dictumest.',
+      'Ntfring Sodalelit (Aeeticl Restoustoust)',
+      'Ntvarius Lectus & Congue',
+      'Pellentesque',
+      'Rigula Aliquamattis (Nestusotu, Wewreist)',
+      'Set Tigulempor',
+      'Sehicula Sedsitamet',
+      'Seque Nesturre',
+      'Tollis Gaurissed',
+      'Tempor Auctor (Estiarma, Toeruslej)'
+    ]
+    let otherLenMid = Math.round(other.length / 2);
+
+    other.forEach((item, index) => {
+        let otherp = document.createElement('p');
+        otherp.classList.add('text--light-primary', 'font-size--sm', 'mb--2');
+        otherp.textContent = item;
+
+        if(index + 1 <= otherLenMid){
+          otherLeftDiv.appendChild(otherp);
+        }else{
+          otherRightDiv.appendChild(otherp);
+        }
+    });
+
+      otherList.appendChild(otherLeftDiv);
+      otherList.appendChild(otherRightDiv);
+    })
+  .catch(error => {
+    console.error('Error fetching content:', error);
+  });
 });
