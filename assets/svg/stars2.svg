@@ -1,0 +1,11 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 19" width="104" height="19">
+	<title>Client Reviews -  Modal</title>
+	<defs>
+		<image width="104" height="19" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAAATCAYAAAB8+UijAAAAAXNSR0IArs4c6QAAAsBJREFUWEflmUFu2kAYhd8vUliWnKBIhUXoJj1Bc4MmJ+hkYYulfQPfwGRrL0JOUDhBj9BmUVIJKpETFJZA4r8ex6bGNp4R6W6Q2DDDW7yn+fw/D0Hj89PvnX9wZz80tmpvMVnTsqzzMAy1/CSVo9/9TrtFJwtics7c2Ui1X2fdZE0hRLvZbC6Y2QnDUOmnMqAHvyeY+BaMSd+dX+oEoNpjsqZlWYKIbpl5Ep8ipZ/KgKZ+dwzCZ2n6mp9OP7qLpSoA1brJmjHexkSU+LnZbE5Ho1Gtn7UBpSj6kxlOTNevxZzJminedn4y87UKc7UB7VCUJfQfMGeyZoa3nZ0amKsNKI+iTPS1mDNZM4+3zE8V5mjq90YAdyqfG4RPxd+Jcc9AFTeXhBPnzP21MFnTtm05mVX7ibKfAO5R4Wc85S0bjYZDJeSonvCH1pnu+u5MyGWTNYsYO9ZOAHdBEIgEcbI0ElhOa++OEFyB4fXd+TD/X5M1ZRElojFwpJ+AFwRB4ufuGZRMV3gzBPEX3ZAk7iKQOPSWwWTNdGKTJmv7KXHHzCL/lqE0JKR4ksJva4Nivlnj2dPpRSZrpshT+klEN+v12iv2osopLnnI15+kVd+Zt3VPmtxnsmY6ONSdpFWMtEo/qwMaduWUpjpBV333t+Ss1mdqsKZt22o/gasgCEp+lgKa+u8vQfRV6XpualPtNVnTtm35vk3tZzq1lWpN8YcSihiPADsAOdjvRdqYM1mzAm+Pce9x0m++Z1ZirnyC8ihiTNZ4EtkgMPW7MiR/FyqzFub28GaYZh5v8g32drsV2SAQr8mg/vlZgbm9gB787gUTvgGo7DalzqSBOZM1B4PBRRRFL37muk2eWoXOlJTT/HohoJ5gsGCQU3eD+tJvGh5AHdUdUTJiG6qZjtgivZw7eIMqO1Or1fKiKOoU74j+Au1pPZnuQlxhAAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+	</style>
+	<g id="Client Reviews -  Modal">
+		<use id="-e-stars" href="#img1" transform="matrix(1,0,0,1,0,0)"/>
+	</g>
+</svg>

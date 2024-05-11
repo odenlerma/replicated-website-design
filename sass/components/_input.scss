@@ -38,3 +38,16 @@ $glow-size: 16px;
         box-shadow: 0 0 $glow-size map-get($colors, "white"); // Add shadow to create glow effect
     }
 }
+
+input[type="checkbox"] {
+    height: 1rem;
+    width: 1rem;
+    border: 1px solid map-get($colors, "gray");
+
+    &:checked {
+        & + .checkmark {
+          background-color: map-get($colors, "success");
+          border-color: map-get($colors, "success");
+        }
+    }
+}
