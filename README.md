@@ -3,7 +3,7 @@ This is for technical exam purposes and will be set to private once exam is done
 
 # View website of project
 Website Link: 
-[https://odenlerma.github.io/replicated-website-design/] (https://odenlerma.github.io/replicated-website-design/)
+https://odenlerma.github.io/replicated-website-design/
 
 # ![WEBPAGE](assets/png/screenshot.PNG)
 
