@@ -77,6 +77,7 @@ categoryid.addEventListener('click', function() {
 });
 
 function showCategory() {
+    categoryid.classList.add('focused');
     categoryList.innerHTML = '';
 
     const options = ['Family', 'Criminal Defense', 'Business', 'Personal Injury', 'Bankruptcy & Finances', 'Products & Services', 'Employment', 'Real Estate', 'Immigration', 'Wills, Trusts, & Estates', 'Government', 'Intellectual Property'];
@@ -92,6 +93,7 @@ function showCategory() {
 }
 
 function hideCategory() {
+    categoryid.classList.remove('focused');
     categoryList.innerHTML = '';
     categoryList.classList.add('d--none');
 }
