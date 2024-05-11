@@ -14,7 +14,11 @@ function openModal(maxWidth, content) {
 
   // close modal when backdrop or close button is clicked
   backdrop.addEventListener('click', closeModal);
-  modal.querySelector('#closeModalBtn').addEventListener('click', closeModal);
+  const modals = modal.querySelectorAll('#closeModalBtn')
+
+  modals.forEach(m => {
+    m.addEventListener('click', closeModal);
+  })
 
   // show modal and backdrop
   backdrop.style.display = 'block';
@@ -132,70 +136,111 @@ function hideCategory() {
 }
 
 function openScreen3Modal(val) {
-  openModal(
-    "600px",
-    `
-    <div class="d--flex justify--flex-end pe--3 pt--3" id="closeModalBtn">
-    <h1 class="text--gray">X</h1>
-    </div>
-    <div class="flex--row d--flex align--center ps--4 pe--4 pb--5">
-        <span class="badge text--white font--bold me--3">3</span>
-        <p class="mb--0">Which <b>${val}</b> issue(s) apply to your case?</p>
-    </div>
-    <div class="row justify--center ps--5 pe--5 pb--6">
-      <div class="col__md--6 col__sm--12">
-        <div class="pb--4 d--flex align--center">
-          <input type="checkbox" id="checkbox1" class="me--3">
-          <label class="font--bold font-size--sm" for="checkbox1">Adoptions</label>
-        </div>
-        <div class="pb--4 d--flex align--center">
-          <input type="checkbox" id="checkbox2" class="me--3">
-          <label class="font--bold font-size--sm" for="checkbox2">Guardianship</label>
-        </div>
-        <div class="pb--4 d--flex align--center">
-          <input type="checkbox" id="checkbox3" class="me--3">
-          <label class="font--bold font-size--sm" for="checkbox3">Child Custody and Visitation</label>
-        </div>
-        <div class="pb--4 d--flex align--center">
-          <input type="checkbox" id="checkbox4" class="me--3">
-          <label class="font--bold font-size--sm" for="checkbox4">Paternity</label>
-        </div>
-      </div>
-      <div class="col__md--6 col__sm--12">
-        <div class="pb--4 d--flex align--center">
-          <input type="checkbox" id="checkbox5" class="me--3">
-          <label class="font--bold font-size--sm" for="checkbox5">Child Support</label>
-        </div>
-        <div class="pb--4 d--flex align--center">
-          <input type="checkbox" id="checkbox6" class="me--3">
-          <label class="font--bold font-size--sm" for="checkbox6">Separations</label>
-        </div>
-        <div class="pb--4 d--flex align--center">
-          <input type="checkbox" id="checkbox7" class="me--3">
-          <label class="font--bold font-size--sm" for="checkbox7">Divorce</label>
-        </div>
-        <div class="pb--4 d--flex align--center">
-          <input type="checkbox" id="checkbox8" class="me--3">
-          <label class="font--bold font-size--sm" for="checkbox8">Spousal Support or Alimony</label>
-        </div>
-      </div>
-      <div class="d--flex flex--row justify--center align--center pt--5">
-         <button class="button--primary text--white font--bold">FIND A LAWYER NOW</button>
-      </div>
-    </div>
-    `,
-  )
+  fetch('./modal/modal-screen3.html')
+  .then(response => response.text())
+  .then(htmlContent => {
+    openModal("600px", htmlContent);
+    const categoryValue = document.getElementById('categoryValue');
+    categoryValue.textContent = val;
+  })
+  .catch(error => {
+    console.error('Error fetching content:', error);
+  });
 }
 
 const categoryInput = document.getElementById('categoryInput')
 categoryList.addEventListener('click', function(event) {
     if (event.target.tagName === 'LI') {
         categoryInput.textContent = event.target.textContent;
-        categoryInput.style.color = '#000000'
         hideCategory()
         openScreen3Modal(event.target.textContent)
     }
 });
+
+
+const openScreen4Modals = document.querySelectorAll('#openScreen4Modal');
+openScreen4Modals.forEach(openScreen4Modal => {
+  openScreen4Modal.addEventListener('click', function(event) {
+    fetch('./modal/modal-screen4.html')
+    .then(response => response.text())
+    .then(htmlContent => {
+      openModal("600px", htmlContent);
+      
+      //evaluation list
+      const evalList = document.getElementById('evaluationList');
+      evalList.innerHTML = '';
+
+      const evaloptions = [
+        {
+          title: 'Overall',
+          stars: 5,
+        },
+        {
+          title: 'Responded in a timely manner',
+          stars: 4,
+        },
+        {
+          title: 'Answered questions clearly',
+          stars: 5,
+        },
+        {
+          title: 'Understood Needs',
+          stars: 4,
+        },
+        {
+          title: 'Gave complete and clear information',
+          stars: 5,
+        },
+        {
+          title: 'Knowledgeable in legal area',
+          stars: 4,
+        },
+        {
+          title: 'Good value for money',
+          stars: 5,
+        },
+        {
+          title: 'Would hire again',
+          stars: 4,
+        },
+        {
+          title: 'Would recommend to friend',
+          stars: 5,
+        },
+
+      ];
+
+      evaloptions.forEach((option , index) => {
+          const evalDiv = document.createElement('div');
+          evalDiv.classList.add('row', 'justify--center', 'align--center');
+          evalDiv.innerHTML = `
+            <div class="col__md--9 font-size--sm">
+                <p class=${index == 0 ? 'font--bold mb--0' : 'mb--0'}>${option.title}</p>
+            </div>
+          `
+
+          const stardiv = document.createElement('div')
+          stardiv.classList.add('col__md--3')
+
+          for (let i = 0; i < 5; i++) {
+            const star = document.createElement('span')
+            star.textContent = "★"
+            let starclass = i < option.stars ? "text--warning" : "text--dark-gray";
+            star.classList.add(starclass, 'modal-screen4__star')
+            stardiv.appendChild(star)
+          }
+
+          evalDiv.appendChild(stardiv)
+          evalList.appendChild(evalDiv);
+      });
+
+    })
+    .catch(error => {
+      console.error('Error fetching content:', error);
+    });
+  });
+});
+
 
 const openScreen5Modal = document.getElementById('openScreen5Modal');
 openScreen5Modal.addEventListener('click', function() {
