@@ -58,6 +58,7 @@
     }
 
     .clickhere {
+        @extend .cursor--pointer;
         text-decoration: underline;
     }
 

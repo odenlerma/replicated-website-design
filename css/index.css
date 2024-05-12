@@ -18,23 +18,6 @@ img {
   max-width: 100%;
 }
 
-.font--bold {
-  font-family: Montserrat;
-  font-weight: 600;
-}
-
-.font-size--sm {
-  font-size: 0.75rem;
-}
-
-.text--italic {
-  font-style: italic;
-}
-
-.text-align--center {
-  text-align: center;
-}
-
 h1, h2, h3 {
   font-weight: 300;
 }
@@ -176,6 +159,27 @@ input[type=checkbox] {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+}
+
+.font--bold {
+  font-family: Montserrat;
+  font-weight: 600;
+}
+
+.font-size--sm {
+  font-size: 0.75rem;
+}
+
+.text--italic {
+  font-style: italic;
+}
+
+.text-align--center {
+  text-align: center;
+}
+
+.cursor--pointer, .container__main .clickhere {
+  cursor: pointer;
 }
 
 .container__header .img__logo {
