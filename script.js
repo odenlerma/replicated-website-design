@@ -165,8 +165,21 @@ openScreen4Modals.forEach(openScreen4Modal => {
     fetch('./modal/modal-screen4.html')
     .then(response => response.text())
     .then(htmlContent => {
-      openModal("600px", htmlContent);
-
+      let modifiedHTML = htmlContent;
+      
+      const lawyer = event.target.closest('#clientReview');
+      if (lawyer) {
+        const lawyerData = lawyer.getAttribute('lawyer-data');
+        const parseData = JSON.parse(lawyerData);
+        modifiedHTML = htmlContent.replace('{{img}}', parseData.img)
+                                  .replace('{{name}}', parseData.name)
+                                  .replace('{{address}}', parseData.address)
+                                  .replace('{{category}}', parseData.category);
+      }
+      
+      // OPEN MODAL
+      openModal("600px", modifiedHTML);
+      
       //evaluation list
       const evalList = document.getElementById('evaluationList');
       evalList.innerHTML = '';

@@ -1,4 +1,4 @@
-<div class="modal-screen4">
+<div class="modal-screen4" id="modalScreen4">
 <div class="d--flex justify--space-between ps--5 pe--3">
     <h2 class="pt--2 font--bold">CLIENT REVIEWS</h2>
     <h1 class="cursor--pointer  pt--1" id="closeModalBtn" >X</h1>
@@ -8,12 +8,12 @@
         <hr class="mb--0 mt--3">
         <div class="row gap--2 justify--center align--center">
             <div class="col__md--2 col__sm--12">
-                <img id="lawyerImg" src="assets/svg/review-brigida.svg" class="modal-screen4__img" />
+                <img id="modalLawyerImg" src='{{img}}' class="modal-screen4__img" />
             </div>
             <div class="col__md--10 col__sm--12">
-                <h1 id="lawyerName" class="font--bold">Brigida R.</h1>
-                <p id="lawyerLocation" class="text--gray">Dallas, TX</p>
-                <p id="lawyerCategory">Family Law</p>
+                <h1 class="font--bold">{{name}}</h1>
+                <p class="text--gray">{{address}}</p>
+                <p>{{category}}</p>
             </div>
         </div>
         <div class="row">
