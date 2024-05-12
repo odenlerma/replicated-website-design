@@ -27,9 +27,11 @@ function openModal(maxWidth, content) {
 
 // close the modal
 function closeModal() {
+  // get modal
   const backdrop = document.querySelector('.modal--backdrop');
   const modal = document.querySelector('.modal');
 
+  // remove modal
   document.body.removeChild(backdrop);
   document.body.removeChild(modal);
 }
@@ -53,17 +55,27 @@ input.addEventListener('blur', () => {
 const inputid = document.getElementById('textInputSelect');
 const optionsList = document.getElementById('optionsList');
 
+// listen to zipcode input
 inputid.addEventListener('input', function(event) {
   const value = event.target.value.trim();
   
-  if (value === '00000') {
-    showOptions();
+  // show modal if provided input is equal to value
+  const options = [{location: 'Nowheresville, XX,', zipcode: '00000'}];
+  let list = []
+  options.forEach(option => {
+    if(option.zipcode === value){
+      list.push(option)
+    }
+  })
+  
+  if (list) {
+    showOptions(list)
   } else {
     hideOptions();
   }
 });
 
-
+// replace input value on select zipcode
 optionsList.addEventListener('click', function(event) {
     if (event.target.tagName === 'LI') {
       input.value = event.target.textContent;
@@ -71,28 +83,35 @@ optionsList.addEventListener('click', function(event) {
     }
 });
 
-
-function showOptions() {
+// show option list and create list
+function showOptions(list) {
     optionsList.innerHTML = '';
 
-    const options = ['Nowheresville, XX, '];
-    const value = inputid.value;
-
-    options.forEach(option => {
+    list.forEach(option => {
+        // create li and add class
         const li = document.createElement('li');
         li.classList.add('ps--4', 'pe--4', 'pb--3', 'pt--3');
+
+        //create span for zipcode
         const span = document.createElement('span');
         span.classList.add('text--light-primary');
-        span.textContent = value;
-        const textNode = document.createTextNode(options);
+        span.textContent = option.zipcode;
+
+        //append text for location
+        const textNode = document.createTextNode(option.location + ' ');
+
+        //append to li
         li.appendChild(textNode);
         li.appendChild(span);
+
+        //append to list
         optionsList.appendChild(li);
     });
 
     optionsList.classList.remove('d--none');
 }
 
+// hide zipcode list
 function hideOptions() {
     optionsList.innerHTML = '';
     optionsList.classList.add('d--none');
@@ -101,8 +120,9 @@ function hideOptions() {
 // ============== on select category ========== //
 const categoryid = document.getElementById('categoryDiv');
 const categoryList = document.getElementById('categoryList');
-let bool = true
+let bool = true // show or hide category options
 
+// listen to on click
 categoryid.addEventListener('click', function() {
     if (bool) {
         showCategory()
@@ -113,6 +133,7 @@ categoryid.addEventListener('click', function() {
     }
 });
 
+// show category list
 function showCategory() {
     categoryid.classList.add('focused');
     categoryList.innerHTML = '';
